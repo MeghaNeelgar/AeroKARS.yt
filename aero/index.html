@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Rental Service</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+        .navbar {
+            background-color:orange;
+            padding: 10px 20px;
+        }
+        .navbar-brand {
+            font-size: 24px;
+            color: #fff;
+            font-weight: bold;
+        }
+        .navbar-nav .nav-link {
+            color: #fff;
+            margin-right: 15px;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #ccc;
+        }
+        .navbar-nav .dropdown-toggle::after {
+            margin-left: 5px;
+        }
+        .navbar-nav .btn-signup {
+            background-color: #fff;
+            color: #000;
+            border-radius: 20px;
+            padding: 5px 15px;
+            font-weight: bold;
+        }
+        .navbar-nav .btn-signup:hover {
+            background-color: #f8f9fa;
+        }
+        .navbar-nav .lang-icon, .navbar-nav .help-link {
+            margin-right: 10px;
+        }
+    .hero-section {
+      background-color: #f5f5f5;
+      padding: 50px 0;
+    }
+    .hero-section .content {
+      display: flex;
+      align-items: center;
+    
+    }
+    .hero-section h1 {
+      font-size: 70px;
+      color: #FF6347;
+      font-weight: bold;
+    }
+    .hero-section h2 {
+      font-size: 50px;
+      font-weight: bold;
+    }
+    .car-image img {
+      width: 100%;
+      border-radius: 15px;
+    }
+    .app-buttons img {
+      margin-right: 10px;
+    }
+    .form-section {
+      background-color: #f5f5f5;
+      padding: 30px 0;
+    }
+    .steps-section {
+      padding: 50px 0;
+      text-align: center;
+    }
+    .steps-section h2 {
+      margin-bottom: 40px;
+    }
+    .step-card {
+      text-align: center;
+      padding: 20px;
+    }
+    .step-card img {
+      width: 50px;
+      margin-bottom: 20px;
+    }
+    .about-us-section {
+      padding: 60px 0;
+    }
+    .about-us-section img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 10px;
+    }
+    .about-us-section h2 {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .about-us-section p {
+      color: #666;
+    }
+    .about-us-section .btn-learn-more {
+      background-color: #6C63FF;
+      color: white;
+      border-radius: 5px;
+      padding: 10px 20px;
+    }
+    .btn-learn-more:hover {
+      background-color: #5a54d6;
+    }
+    .highlight-text {
+      color: #FF6347;
+      font-weight: bold;
+    }
+    .review-card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 10px;
+      text-align: center;
+    }
+    .review-card img {
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+    }
+    .star-rating {
+      color: orange;
+      margin-bottom: 10px;
+    }
+    .subscribe-section {
+      background-color: #FF7F50;
+      padding: 20px;
+      text-align: center;
+      color: white;
+      margin-top: 30px;
+    }
+    .car-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .price {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #FF6347;
+    }
+    .rent-now-btn {
+      background-color: #6C63FF;
+      color: white;
+    }
+    .rent-now-btn:hover {
+      background-color: #5a54d6;
+    }
+    .qr-card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+    }
+    .qr-card img {
+      width: 120px;
+      height: 120px;
+    }
+    .arrow-icon {
+      font-size: 24px;
+      vertical-align: middle;
+    }
+    .counter {
+      font-size: 48px;
+      font-weight: bold;
+    }
+    .counter-text {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+    .counter-section {
+      padding: 50px 0;
+    }
+    .counter-box {
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+    }
+    .footer {
+            background-color: orange;
+            color: #fff;
+            padding: 40px 0;
+        }
+        .footer-logo {
+            font-size: 36px;
+            font-weight: bold;
+            color: #fff;
+        }
+        .footer-logo span {
+            color: #00AEEF;
+        }
+        .footer-text {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .footer-links a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        .social-icons a {
+            color: #fff;
+            font-size: 20px;
+            margin-right: 10px;
+            text-decoration: none;
+
+        }
+        .social-icons a:hover {
+            color: #00AEEF;
+        }
+        .social-section {
+            text-align: center;
+            padding: 40px 0;
+            color: #fff;
+        }
+        .social-section h5 {
+            margin-bottom: 20px;
+        }
+        .social-icons a {
+            font-size: 40px;
+            margin: 0 15px;
+            color: #fff;
+            display: inline-block;
+        }
+        .social-icons a:hover {
+            opacity: 0.8;
+        }
+        .social-icons .twitter { color: #1DA1F2; }
+        .social-icons .instagram { color: #E1306C; }
+        .social-icons .youtube { color: #FF0000; }
+        .social-icons .facebook { color: #4267B2; }
+        .social-icons .linkedin { color: #0077B5; }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+      <!-- Left Side -->
+      <a class="navbar-brand" href="#">AeroKARS</a>
+      <div class="collapse navbar-collapse">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Ride</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Drive</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Business</a>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                      About
+                  </a>
+              </li>
+          </ul>
+          
+          <!-- Right Side -->
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                  <a class="nav-link lang-icon" href="#"><i class="fas fa-globe"></i> 🌐EN</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link help-link" href="#">Help</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Log in</a>
+              </li>
+              <li class="nav-item">
+                  <a class="btn btn-signup" href="#">Sign up</a>
+              </li>
+          </ul>
+      </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="container">
+    <div class="row content">
+      <div class="col-md-6">
+        <h1>Looking to</h1>
+        <h2>rent a car</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, ut qui.</p>
+        <div class="app-buttons">
+          <a href="#">
+            <img src="images/app store.png" alt="App Store" style="width: 150px;">
+          </a>
+          <a href="#">
+            <img src="images/images.png" alt="Google Play" style="width: 150px;">
+          </a>
+        </div>
+      </div>
+      <div class="col-md-6 car-image">
+        <img src="images/logo.png" alt="Car Image">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Form Section -->
+<section class="form-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <form class="d-flex justify-content-between align-items-center">
+          <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" class="form-control" id="location" placeholder="Search Places">
+          </div>
+          <div class="mb-3">
+            <label for="pickupDate" class="form-label">Pick-Up Date</label>
+            <input type="date" class="form-control" id="pickupDate">
+          </div>
+          <div class="mb-3">
+            <label for="returnDate" class="form-label">Return Date</label>
+            <input type="date" class="form-control" id="returnDate">
+          </div>
+          <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Steps Section -->
+<section class="steps-section">
+  <div class="container">
+    <h2>Rent With 3 Easy Steps</h2>
+    <div class="row">
+      <div class="col-md-4 step-card">
+        <img src="images/location.png" alt="Choose Location">
+        <h5>Choose A Location</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="col-md-4 step-card">
+        <img src="images/pick.png" alt="Pick-Up Date">
+        <h5>Pick-Up Date</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="col-md-4 step-card">
+        <img src="images/book.png" alt="Book A Car">
+        <h5>Book A Car</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Car Images -->
+
+
+
+<!-- Car Deals Section -->
+<section class="container py-5">
+  <h2 class="text-center mb-4">Explore Our Top Deals From Top Rated Dealers</h2>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card car-card mb-4">
+        <img src="images/innova.jpeg" alt="Honda Civic 2018">
+        <div class="card-body text-center">
+          <span class="badge bg-secondary">2009</span>
+          <h5 class="card-title">2009 Toyota Innova</h5>
+          <p class="price">3000/per day | 81000/month</p>
+          <a href="#" class="btn rent-now-btn">Rent Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card car-card mb-4">
+        <img src="images/kia.jpeg" alt="Honda Civic 2018">
+        <div class="card-body text-center">
+          <span class="badge bg-secondary">2024</span>
+          <h5 class="card-title">2024 Kia Seltos</h5>
+          <p class="price">5000/perday | 135000/month</p>
+          <a href="#" class="btn rent-now-btn">Rent Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card car-card mb-4">
+        <img src="images/ciaz.jpeg" alt="Honda Civic 2018">
+        <div class="card-body text-center">
+          <span class="badge bg-secondary">2016</span>
+          <h5 class="card-title">2016 Ciaz</h5>
+          <p class="price">2500/perday |<br>
+            67500/month</p>
+          <a href="#" class="btn rent-now-btn">Rent Now</a>
+        </div>
+    
+      </div>
+    </div>
+  </div>
+</section>
+<section class="container py-5">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card car-card mb-4">
+          <img src="images/xuv.jpeg" alt="Honda Civic 2018">
+          <div class="card-body text-center">
+            <span class="badge bg-secondary">2024</span>
+            <h5 class="card-title">2024 Mahendra XUV 700</h5>
+            <p class="price">5000/per day | 135000/month</p>
+            <a href="#" class="btn rent-now-btn">Rent Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card car-card mb-4">
+          <img src="images/thar1.jpeg" alt="Honda Civic 2018">
+          <div class="card-body text-center">
+            <span class="badge bg-secondary">2023</span>
+            <h5 class="card-title">2023 Mahendra Thar</h5>
+            <p class="price">3000/perday |<br>
+                 81000/month</p>
+            <a href="#" class="btn rent-now-btn">Rent Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card car-card mb-4">
+          <img src="images/fort1.jpeg" alt="Honda Civic 2018">
+          <div class="card-body text-center">
+            <span class="badge bg-secondary">2022</span>
+            <h5 class="card-title">2022 Toyota Fortuner</h5>
+            <p class="price">6000/perday |<br>
+              145000/month</p>
+            <a href="#" class="btn rent-now-btn">Rent Now</a>
+          </div>
+      
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="about-us-section container">
+    <div class="row align-items-center">
+      <!-- Left Side: Image -->
+      <div class="col-md-6">
+        <img src="images/jeep.png" alt="Jeep Car Image">
+      </div>
+      
+      <!-- Right Side: Text and Button -->
+      <div class="col-md-6">
+        <h2>Best Customer Experience</h2>
+        <h5 class="highlight-text">ABOUT US</h5>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sit optio consectetur 
+          voluptate repellat. Nulla harum ipsa nihil voluptate iste omnis distinctio maiores iure 
+          voluptatem consequatur rerum quidem asperiores eaque at animi, optio hic?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt labore aliquam dicta 
+          quam est totam porro repellat iste.
+        </p>
+        <a href="#" class="btn btn-learn-more">Learn More</a>
+      </div>
+    </div>
+  </section>
+  <!-- coustemers -->
+  <section class="container my-5"></section>
+    <h2 class="text-center mb-4">Whats Our Customer Say</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="review-card">
+          <img src="images/123.jpg" alt="Customer 1">
+          <h5 class="mt-3">Sagar Yadal</h5>
+          <div class="star-rating">
+            &#9733;&#9733;&#9733;&#9733;&#9734;
+          </div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis amet quibusdam similique doloremque consequuntur cupiditate.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="review-card">
+          <img src="images/megha.jpg" alt="Customer 2">
+          <h5 class="mt-3">Megha Neelgar</h5>
+          <div class="star-rating">
+            &#9733;&#9733;&#9733;&#9733;&#9734;
+          </div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem minima at fugiat totam labore voluptatum ipsum.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="review-card">
+          <img src="images/vik.jpg" alt="Customer 3">
+          <h5 class="mt-3">Vikas Barker</h5>
+          <div class="star-rating">
+            &#9733;&#9733;&#9733;&#9733;&#9734;
+          </div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo voluptate beatae sed earum officiis pariatur perferendis adipisci iusto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Qr code -->
+  <section class="container my-5">
+    <h2 class="text-center mb-4">It's easier in the apps</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-5">
+        <div class="qr-card d-flex justify-content-between align-items-center">
+          <img src="images/qr.png" alt="QR code Uber app">
+          <div>
+            <h5>Download the AeroKARS app</h5>
+            <p>Scan to download</p>
+          </div>
+          <span class="arrow-icon">→</span>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="qr-card d-flex justify-content-between align-items-center">
+          <img src="images/qr.png" alt="QR code Driver app">
+          <div>
+            <h5>Download the Driver app</h5>
+            <p>Scan to download</p>
+          </div>
+          <span class="arrow-icon">→</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Number -->
+  <section class="container counter-section">
+    <div class="row text-center">
+      <div class="col-md-3">
+        <div class="counter-box">
+          <div class="counter">250+</div>
+          <div class="counter-text">Expert Team Members</div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="counter-box">
+          <div class="counter">1 Lakh+</div>
+          <div class="counter-text">Contacted Customers</div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="counter-box">
+          <div class="counter">20k+</div>
+          <div class="counter-text">Registered Clients</div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="counter-box">
+          <div class="counter">99%</div>
+          <div class="counter-text">Customer Satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="subscribe-section">
+    <h4>Subscribe To Newsletter</h4>
+  </section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<footer class="footer">
+  <div class="container">
+      <div class="row">
+          <!-- Left Column: Logo and Text -->
+          <div class="col-md-6">
+              <div class="footer-logo">
+                  AeroKARS<span>.</span>
+              </div>
+              <p class="footer-text">
+                  The future is fast approaching, and the consumer industry is on the precipice of dramatic change. The future is fast approaching, and the consumer industry is on the precipice of dramatic change.
+              </p>
+          </div>
+          <div class="container social-section">
+            <h5>Let's keep in touch</h5>
+            <div class="social-icons">
+                <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="youtube"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+
+          <!-- Right Column: Quick Access and Social Links -->
+          <div class="col-md-3 footer-links">
+              <h5>Quick Access</h5>
+              <a href="#">Home</a>
+              <a href="#">About us</a>
+              <a href="#">Services</a>
+              <a href="#">Benefits</a>
+              <a href="#">Testimonials</a>
+              <a href="#">Contact</a>
+          </div>
+
+          <div class="col-md-3">
+              <h5>Follow Us</h5>
+              <div class="social-icons">
+                  <a href="#"><img src="images/SOCIAL1.jpg" alt="" height="50px"></a>
+                  <a href="#"><img src="" alt=""></a>
+                  <a href="#"><img src="" alt=""></a>
+                  <a href="#"><img src="" alt=""></a>
+              </div>
+              <p>Contact Us: +91 7204191834</p>
+              <p>Send Mail: care@zotono.in</p>
+              <p>Address: JP Nagar, Karnataka - Bangalore - India</p>
+          </div>
+      </div>
+  </div>
+</footer>
+
+</body>
+</html>
